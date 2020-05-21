@@ -24,33 +24,14 @@
     //
     //フォーム動的作成
     //
-    // let str = '<tr><th>番号</th><th>名前</th><th>興味</th><th>理解</th></tr>';
-    // for (let i = 1; i < 21; i++) {
-    //   str += '<tr>'
-    //   str += '<td>' + ('000' + i).slice(-3) + '</td >'
-    //   str += '<td>'
-    //   str += '<label for="userName">名前</label>'
-    //   str += '<input type="text" id="name_' + ('000' + i).slice(-3) + '">'
-    //   str += '</td>'
-    //   str += '<td>'
-    //   str += '<label for="Interesting">興味</label>'
-    //   str += '<input type="number" id="Interesting_' + ('000' + i).slice(-3) + '">'
-    //   str += '</td>'
-    //   str += '<td>'
-    //   str += '<label for="understanding">理解</label>'
-    //   str += '<input type="number" id="understanding_' + ('000' + i).slice(-3) + '">'
-    //   str += '</td>'
-    //   str += '<td>'
-    //   str += '<button id="send_' + ('000' + i).slice(-3) + '" data-id=' + i + '>send</button>'
-    //   str += ' </td>'
-    //   str += '</tr>'
-    // }
+
     let str = `
       <tr>
         <th>番号</th>
         <th>名前</th>
         <th>興味</th>
         <th>理解</th>
+        <th>つぶやき</th>
       </tr>`;
     for (let i = 1; i < 21; i++) {
       str += `
@@ -59,22 +40,34 @@
           ${('000' + i).slice(-3)}
         </td>
         <td>
-          <label for="userName">名前</label>
+          <label for="userName"></label>
           <input type="text" id="name_${('000' + i).slice(-3)}">
         </td>
         <td>
-          <label for="Interesting">興味</label>
+          <label for="Interesting"></label>
           <input type="number" id="Interesting_${('000' + i).slice(-3)}">
         </td>
         <td>
-          <label for="understanding">理解</label>
+          <label for="understanding"></label>
           <input type="number" id="understanding_${('000' + i).slice(-3)}">
+        </td>
+        <td>
+          <label for="understanding"></label>
+          <input type="text" id="tweet_${('000' + i).slice(-3)}">
         </td>
         <td>
           <button id="send_${('000' + i).slice(-3)}" data-id=${i}>send</button>
         </td>
       </tr>`;
     }
+    str += `
+      <tr>
+        <th>番号</th>
+        <th>名前</th>
+        <th>興味</th>
+        <th>理解</th>
+        <th>つぶやき</th>
+      </tr>`;
 
     $('#tableOutput').html(str);
   </script>
@@ -114,11 +107,12 @@
 
       const dataObject = {
         userID: userIDcount,
-        userName: $('#name_00' + userIDcount).val(),
-        Interesting: Number($('#Interesting_00' + userIDcount).val()),
-        understanding: Number($('#understanding_00' + userIDcount).val()),
+        userName: $(`#name_${('000' + userIDcount).slice(-3)}`).val(),
+        Interesting: Number($(`#Interesting_${('000' + userIDcount).slice(-3)}`).val()),
+        understanding: Number($(`#understanding_${('000' + userIDcount).slice(-3)}`).val()),
+        tweet: $(`#tweet_${('000' + userIDcount).slice(-3)}`).val(),
       }
-      db.doc('name_00' + userIDcount).set(dataObject);
+      db.doc(`name_${('000' + userIDcount).slice(-3)}`).set(dataObject);
     });
 
 
@@ -130,9 +124,10 @@
       querySnapshot.docs.forEach(function (doc) {
         const data = doc.data();
         console.log(data);
-        $('#name_00' + data.userID).val(data.userName);
-        $('#Interesting_00' + data.userID).val(data.Interesting);
-        $('#understanding_00' + data.userID).val(data.understanding);
+        $(`#name_${('000' + data.userID).slice(-3)}`).val(data.userName);
+        $(`#Interesting_${('000' + data.userID).slice(-3)}`).val(data.Interesting);
+        $(`#understanding_${('000' + data.userID).slice(-3)}`).val(data.understanding);
+        $(`#tweet_${('000' + data.userID).slice(-3)}`).val(data.tweet);
 
       })
     });
