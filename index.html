@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>雰囲気オンライン</title>
+  <style>
+    #output li {
+      background: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>雰囲気オンライン</h1>
+  <!-- 入力場所を作成しよう -->
+
+  <table>
+    <tr>
+      <th>番号</th>
+      <th>名前</th>
+      <th>興味</th>
+      <th>理解</th>
+    </tr>
+
+    <tr>
+      <td>001</td>
+      <td>
+        <label for="userName">名前</label>
+        <input type="text" id="name_001">
+      </td>
+      <td>
+        <label for="Interesting">興味</label>
+        <input type="number" id="Interesting_001">
+      </td>
+      <td>
+        <label for="understanding">理解</label>
+        <input type="number" id="understanding_001">
+      </td>
+      <td>
+        <button id="send_001" data-id=1>send</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>002</td>
+      <td>
+        <label for="userName">名前</label>
+        <input type="text" id="name_002">
+      </td>
+      <td>
+        <label for="Interesting">興味</label>
+        <input type="number" id="Interesting_002">
+      </td>
+      <td>
+        <label for="understanding">理解</label>
+        <input type="number" id="understanding_002">
+      </td>
+      <td>
+        <button id="send_002" data-id=2>send</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>003</td>
+      <td>
+        <label for="userName">名前</label>
+        <input type="text" id="name_003">
+      </td>
+      <td>
+        <label for="Interesting">興味</label>
+        <input type="number" id="Interesting_003">
+      </td>
+      <td>
+        <label for="understanding">理解</label>
+        <input type="number" id="understanding_003">
+      </td>
+      <td>
+        <button id="send_003" data-id=3>send</button>
+      </td>
+    </tr>
+
+    <!-- <tr>
+      <td>004</td>
+      <td>
+        <label for="userName">名前</label>
+        <input type="text" id="name_004">
+      </td>
+      <td>
+        <label for="Interesting">興味</label>
+        <input type="number" id="Interesting_004">
+      </td>
+      <td>
+        <label for="understanding">理解</label>
+        <input type="number" id="understanding_004">
+      </td>
+      <td>
+        <button id="send_004">send</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>005</td>
+      <td>
+        <label for="userName">名前</label>
+        <input type="text" id="name_005">
+      </td>
+      <td>
+        <label for="Interesting">興味</label>
+        <input type="number" id="Interesting_005">
+      </td>
+      <td>
+        <label for="understanding">理解</label>
+        <input type="number" id="understanding_005">
+      </td>
+      <td>
+        <button id="send_005">send</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>006</td>
+      <td>
+        <label for="userName">名前</label>
+        <input type="text" id="name_006">
+      </td>
+      <td>
+        <label for="Interesting">興味</label>
+        <input type="number" id="Interesting_006">
+      </td>
+      <td>
+        <label for="understanding">理解</label>
+        <input type="number" id="understanding_006">
+      </td>
+      <td>
+        <button id="send_006">send</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>007</td>
+      <td>
+        <label for="userName">名前</label>
+        <input type="text" id="name_007">
+      </td>
+      <td>
+        <label for="Interesting">興味</label>
+        <input type="number" id="Interesting_007">
+      </td>
+      <td>
+        <label for="understanding">理解</label>
+        <input type="number" id="understanding_007">
+      </td>
+      <td>
+        <button id="send_007">send</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>008</td>
+      <td>
+        <label for="userName">名前</label>
+        <input type="text" id="name_008">
+      </td>
+      <td>
+        <label for="Interesting">興味</label>
+        <input type="number" id="Interesting_008">
+      </td>
+      <td>
+        <label for="understanding">理解</label>
+        <input type="number" id="understanding_008">
+      </td>
+      <td>
+        <button id="send_008">send</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>009</td>
+      <td>
+        <label for="userName">名前</label>
+        <input type="text" id="name_009">
+      </td>
+      <td>
+        <label for="Interesting">興味</label>
+        <input type="number" id="Interesting_009">
+      </td>
+      <td>
+        <label for="understanding">理解</label>
+        <input type="number" id="understanding_009">
+      </td>
+      <td>
+        <button id="send_009">send</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>010</td>
+      <td>
+        <label for="userName">名前</label>
+        <input type="text" id="name_010">
+      </td>
+      <td>
+        <label for="Interesting">興味</label>
+        <input type="number" id="Interesting_010">
+      </td>
+      <td>
+        <label for="understanding">理解</label>
+        <input type="number" id="understanding_010">
+      </td>
+      <td>
+        <button id="send_010">send</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>011</td>
+      <td>
+        <label for="userName">名前</label>
+        <input type="text" id="name_011">
+      </td>
+      <td>
+        <label for="Interesting">興味</label>
+        <input type="number" id="Interesting_011">
+      </td>
+      <td>
+        <label for="understanding">理解</label>
+        <input type="number" id="understanding_011">
+      </td>
+      <td>
+        <button id="send_011">send</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>012</td>
+      <td>
+        <label for="userName">名前</label>
+        <input type="text" id="name_012">
+      </td>
+      <td>
+        <label for="Interesting">興味</label>
+        <input type="number" id="Interesting_012">
+      </td>
+      <td>
+        <label for="understanding">理解</label>
+        <input type="number" id="understanding_012">
+      </td>
+      <td>
+        <button id="send_012">send</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>013</td>
+      <td>
+        <label for="userName">名前</label>
+        <input type="text" id="name_013">
+      </td>
+      <td>
+        <label for="Interesting">興味</label>
+        <input type="number" id="Interesting_013">
+      </td>
+      <td>
+        <label for="understanding">理解</label>
+        <input type="number" id="understanding_013">
+      </td>
+      <td>
+        <button id="send_013">send</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>014</td>
+      <td>
+        <label for="userName">名前</label>
+        <input type="text" id="name_014">
+      </td>
+      <td>
+        <label for="Interesting">興味</label>
+        <input type="number" id="Interesting_014">
+      </td>
+      <td>
+        <label for="understanding">理解</label>
+        <input type="number" id="understanding_014">
+      </td>
+      <td>
+        <button id="send_014">send</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>015</td>
+      <td>
+        <label for="userName">名前</label>
+        <input type="text" id="name_015">
+      </td>
+      <td>
+        <label for="Interesting">興味</label>
+        <input type="number" id="Interesting_015">
+      </td>
+      <td>
+        <label for="understanding">理解</label>
+        <input type="number" id="understanding_015">
+      </td>
+      <td>
+        <button id="send_015">send</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>016</td>
+      <td>
+        <label for="userName">名前</label>
+        <input type="text" id="name_016">
+      </td>
+      <td>
+        <label for="Interesting">興味</label>
+        <input type="number" id="Interesting_016">
+      </td>
+      <td>
+        <label for="understanding">理解</label>
+        <input type="number" id="understanding_016">
+      </td>
+      <td>
+        <button id="send_016">send</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>017</td>
+      <td>
+        <label for="userName">名前</label>
+        <input type="text" id="name_017">
+      </td>
+      <td>
+        <label for="Interesting">興味</label>
+        <input type="number" id="Interesting_017">
+      </td>
+      <td>
+        <label for="understanding">理解</label>
+        <input type="number" id="understanding_017">
+      </td>
+      <td>
+        <button id="send_017">send</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>018</td>
+      <td>
+        <label for="userName">名前</label>
+        <input type="text" id="name_018">
+      </td>
+      <td>
+        <label for="Interesting">興味</label>
+        <input type="number" id="Interesting_018">
+      </td>
+      <td>
+        <label for="understanding">理解</label>
+        <input type="number" id="understanding_018">
+      </td>
+      <td>
+        <button id="send_018">send</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>019</td>
+      <td>
+        <label for="userName">名前</label>
+        <input type="text" id="name_019">
+      </td>
+      <td>
+        <label for="Interesting">興味</label>
+        <input type="number" id="Interesting_019">
+      </td>
+      <td>
+        <label for="understanding">理解</label>
+        <input type="number" id="understanding_019">
+      </td>
+      <td>
+        <button id="send_019">send</button>
+      </td>
+    </tr>
+    <tr>
+      <td>020</td>
+      <td>
+        <label for="userName">名前</label>
+        <input type="text" id="name_020">
+      </td>
+      <td>
+        <label for="Interesting">興味</label>
+        <input type="number" id="Interesting_020">
+      </td>
+      <td>
+        <label for="understanding">理解</label>
+        <input type="number" id="understanding_020">
+      </td>
+      <td>
+        <button id="send_020">send</button>
+      </td>
+    </tr> -->
+
+
+  </table>
+
+
+  <!-- データ出力場所 -->
+  <ul id="output"></ul>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- 以下にfirebaseのコードを貼り付けよう -->
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBwMJsyxgknRPe8oZaYJSm3oQ6g7AHzPyo",
+      authDomain: "funikionline.firebaseapp.com",
+      databaseURL: "https://funikionline.firebaseio.com",
+      projectId: "funikionline",
+      storageBucket: "funikionline.appspot.com",
+      messagingSenderId: "34885119377",
+      appId: "1:34885119377:web:14f0e75412b22d697b3e30",
+      measurementId: "G-2HR194MXSD"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+  <script>
+
+
+    // データベースの設定を記述
+    const db = firebase.firestore().collection('funikiOnline');
+
+    // 送信ボタンクリック時にデータを送信する処理
+    $('button').on('click', function () {
+      let userIDcount = Number($(this).data('id'));
+      alert('aaa');
+
+      const dataObject = {
+        userID: userIDcount,
+        userName: $('#name_00' + userIDcount).val(),
+        Interesting: Number($('#Interesting_00' + userIDcount).val()),
+        understanding: Number($('#understanding_00' + userIDcount).val()),
+      }
+      db.doc('name_00' + userIDcount).set(dataObject);
+    });
+
+
+
+
+    // $('#send_001').on('click', function () {
+    //   const dataObject = {
+    //     userID: 1,
+    //     userName: $('#name_001').val(),
+    //     Interesting: Number($('#Interesting_001').val()),
+    //     understanding: Number($('#understanding_001').val()),
+    //   }
+    //   db.doc('name_001').set(dataObject);
+    // });
+    // $('#send_002').on('click', function () {
+    //   const dataObject = {
+    //     userID: 2,
+    //     userName: $('#name_002').val(),
+    //     Interesting: Number($('#Interesting_002').val()),
+    //     understanding: Number($('#understanding_002').val()),
+    //   }
+    //   db.doc('name_002').set(dataObject);
+    // });
+    // $('#send_003').on('click', function () {
+    //   const dataObject = {
+    //     userID: 3,
+    //     userName: $('#name_003').val(),
+    //     Interesting: Number($('#Interesting_003').val()),
+    //     understanding: Number($('#understanding_003').val()),
+    //   }
+    //   db.doc('name_003').set(dataObject);
+    // });
+    // $('#send_004').on('click', function () {
+    //   const dataObject = {
+    //     userID: 1,
+    //     userName: $('#name_004').val(),
+    //     Interesting: $('#Interesting_004').val(),
+    //     understanding: $('#understanding_004').val(),
+    //   }
+    //   db.doc('name_004').set(dataObject);
+    // });
+    // $('#send_005').on('click', function () {
+    //   const dataObject = {
+    //     userID: 1,
+    //     userName: $('#name_005').val(),
+    //     Interesting: $('#Interesting_005').val(),
+    //     understanding: $('#understanding_005').val(),
+    //   }
+    //   db.doc('name_005').set(dataObject);
+    // });
+    // $('#send_006').on('click', function () {
+    //   const dataObject = {
+    //     userName: $('#name_006').val(),
+    //     Interesting: $('#Interesting_006').val(),
+    //     understanding: $('#understanding_006').val(),
+    //   }
+    //   db.doc('name_006').set(dataObject);
+    // });
+    // $('#send_007').on('click', function () {
+    //   const dataObject = {
+    //     userName: $('#name_007').val(),
+    //     Interesting: $('#Interesting_007').val(),
+    //     understanding: $('#understanding_007').val(),
+    //   }
+    //   db.doc('name_007').set(dataObject);
+    // });
+    // $('#send_008').on('click', function () {
+    //   const dataObject = {
+    //     userName: $('#name_008').val(),
+    //     Interesting: $('#Interesting_008').val(),
+    //     understanding: $('#understanding_008').val(),
+    //   }
+    //   db.doc('name_008').set(dataObject);
+    // });
+    // $('#send_009').on('click', function () {
+    //   const dataObject = {
+    //     userName: $('#name_009').val(),
+    //     Interesting: $('#Interesting_009').val(),
+    //     understanding: $('#understanding_009').val(),
+    //   }
+    //   db.doc('name_009').set(dataObject);
+    // });
+    // $('#send_010').on('click', function () {
+    //   const dataObject = {
+    //     userName: $('#name_010').val(),
+    //     Interesting: $('#Interesting_010').val(),
+    //     understanding: $('#understanding_010').val(),
+    //   }
+    //   db.doc('name_010').set(dataObject);
+    // });
+    // $('#send_011').on('click', function () {
+    //   const dataObject = {
+    //     userName: $('#name_011').val(),
+    //     Interesting: $('#Interesting_011').val(),
+    //     understanding: $('#understanding_011').val(),
+    //   }
+    //   db.doc('name_011').set(dataObject);
+    // });
+    // $('#send_012').on('click', function () {
+    //   const dataObject = {
+    //     userName: $('#name_012').val(),
+    //     Interesting: $('#Interesting_012').val(),
+    //     understanding: $('#understanding_012').val(),
+    //   }
+    //   db.doc('name_012').set(dataObject);
+    // });
+    // $('#send_013').on('click', function () {
+    //   const dataObject = {
+    //     userName: $('#name_013').val(),
+    //     Interesting: $('#Interesting_013').val(),
+    //     understanding: $('#understanding_013').val(),
+    //   }
+    //   db.doc('name_013').set(dataObject);
+    // });
+    // $('#send_014').on('click', function () {
+    //   const dataObject = {
+    //     userName: $('#name_014').val(),
+    //     Interesting: $('#Interesting_014').val(),
+    //     understanding: $('#understanding_014').val(),
+    //   }
+    //   db.doc('name_014').set(dataObject);
+    // });
+    // $('#send_015').on('click', function () {
+    //   const dataObject = {
+    //     userName: $('#name_015').val(),
+    //     Interesting: $('#Interesting_015').val(),
+    //     understanding: $('#understanding_015').val(),
+    //   }
+    //   db.doc('name_015').set(dataObject);
+    // });
+    // $('#send_016').on('click', function () {
+    //   const dataObject = {
+    //     userName: $('#name_016').val(),
+    //     Interesting: $('#Interesting_016').val(),
+    //     understanding: $('#understanding_016').val(),
+    //   }
+    //   db.doc('name_016').set(dataObject);
+    // });
+    // $('#send_016').on('click', function () {
+    //   const dataObject = {
+    //     userName: $('#name_017').val(),
+    //     Interesting: $('#Interesting_017').val(),
+    //     understanding: $('#understanding_017').val(),
+    //   }
+    //   db.doc('name_017').set(dataObject);
+    // });
+    // $('#send_017').on('click', function () {
+    //   const dataObject = {
+    //     userName: $('#name_018').val(),
+    //     Interesting: $('#Interesting_018').val(),
+    //     understanding: $('#understanding_018').val(),
+    //   }
+    //   db.doc('name_018').set(dataObject);
+    // });
+    // $('#send_019').on('click', function () {
+    //   const dataObject = {
+    //     userName: $('#name_019').val(),
+    //     Interesting: $('#Interesting_019').val(),
+    //     understanding: $('#understanding_019').val(),
+    //   }
+    //   db.doc('name_019').set(dataObject);
+    // });
+    // $('#send_020').on('click', function () {
+    //   const dataObject = {
+    //     userName: $('#name_020').val(),
+    //     Interesting: $('#Interesting_020').val(),
+    //     understanding: $('#understanding_020').val(),
+    //   }
+    //   db.doc('name_020').set(dataObject);
+    // });
+
+
+    // データをリアルタイムに取得する処理 descは大きい順ascは小さい順
+    db.orderBy('userID', 'asc').onSnapshot(function (querySnapshot) {
+      // まずはconsole.log()で出力してデータの形を確認！
+      console.log(querySnapshot.docs);
+      console.log('abbb');
+
+      let count = 0;
+      let str = '';
+      alert('aaaaa');
+      querySnapshot.docs.forEach(function (doc) {
+        const data = doc.data();
+        console.log(data);
+        $('#name_00' + data.userID).val(data.userName);
+        $('#Interesting_00' + data.userID).val(data.Interesting);
+        $('#understanding_00' + data.userID).val(data.understanding);
+
+      })
+      $('#output').html(str);
+    });
+
+  </script>
+</body>
+
+</html>
