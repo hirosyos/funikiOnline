@@ -212,7 +212,7 @@
 
       querySnapshot.docs.forEach(function (doc) {
         const data = doc.data();
-        console.log(data);
+        // console.log(data);
         $(`#name_${('000' + data.userID).slice(-3)}`).val(data.userName);
         $(`#Interesting_${('000' + data.userID).slice(-3)}`).val(data.Interesting);
         $(`#understanding_${('000' + data.userID).slice(-3)}`).val(data.understanding);
