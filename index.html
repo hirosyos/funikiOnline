@@ -10,15 +10,104 @@
     #output li {
       background: #ccc;
     }
+
+    body {
+      width: 600px;
+    }
   </style>
 </head>
 
 <body>
   <h1>雰囲気オンライン</h1>
 
+  <canvas id="myScatterChart"></canvas>
+
   <table id="tableOutput"></table>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+
+  <script>
+    // グラフ作成
+    var ctx = document.getElementById("myScatterChart");
+
+    // var chartData = [{ x: 0, y: 0 }];
+    // for (let i = 1; i < 21; i++) {
+    //   console.log($(`#Interesting_${('000' + i).slice(-3)}`).val());
+    //   alert($(`#Interesting_${('000' + i).slice(-3)}`).val());
+    //   chartData[i - 1].x = $(`#Interesting_${('000' + i).slice(-3)}`).val();
+    //   chartData[i - 1].y = $(`#understanding_${('000' + i).slice(-3)}`).val();
+    // }
+
+    var myScatterChart = new Chart(ctx, {
+      type: 'scatter',
+      data: {
+        datasets: [
+          {
+            label: '福岡LAB3',
+            data: [
+              { x: 0, y: 0 },
+              { x: 0, y: 0 },
+              { x: 0, y: 0 },
+              { x: 0, y: 0 },
+              { x: 0, y: 0 },
+              { x: 0, y: 0 },
+              { x: 0, y: 0 },
+              { x: 0, y: 0 },
+              { x: 0, y: 0 },
+              { x: 0, y: 0 },
+              { x: 0, y: 0 },
+              { x: 0, y: 0 },
+              { x: 0, y: 0 },
+              { x: 0, y: 0 },
+              { x: 0, y: 0 },
+              { x: 0, y: 0 },
+              { x: 0, y: 0 },
+              { x: 0, y: 0 },
+              { x: 0, y: 0 },
+              { x: 0, y: 0 },
+            ],
+            backgroundColor: 'RGBA(115,255,25, 1)',
+          }]
+      },
+      options: {
+        title: {
+          display: true,
+          text: '場の雰囲気'
+        },
+        scales: {
+          xAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: '理解'
+            },
+            ticks: {
+              suggestedMin: 0,
+              suggestedMax: 5,
+              stepSize: 1,
+              callback: function (value, index, values) {
+                return value + 'ガッテン'
+              }
+            }
+          }],
+          yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: '興味'
+            },
+            ticks: {
+              suggestedMax: 5,
+              suggestedMin: 0,
+              stepSize: 1,
+              callback: function (value, index, values) {
+                return value + 'スゲー'
+              }
+            }
+          }]
+        }
+      }
+    });
+  </script>
 
   <script>
     //
@@ -52,7 +141,7 @@
           <input type="number" id="understanding_${('000' + i).slice(-3)}">
         </td>
         <td>
-          <label for="understanding"></label>
+          <label for="tweet"></label>
           <input type="text" id="tweet_${('000' + i).slice(-3)}">
         </td>
         <td>
@@ -130,9 +219,19 @@
         $(`#tweet_${('000' + data.userID).slice(-3)}`).val(data.tweet);
 
       })
+
+      for (i = 1; i < 21; i++) {
+        myScatterChart.data.datasets[0].data[i - 1].x = $(`#Interesting_${('000' + i).slice(-3)}`).val();
+        myScatterChart.data.datasets[0].data[i - 1].y = $(`#understanding_${('000' + i).slice(-3)}`).val();
+      };
+      myScatterChart.update();
     });
 
+
+
   </script>
+
+
 </body>
 
 </html>
